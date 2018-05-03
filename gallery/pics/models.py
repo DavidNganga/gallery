@@ -24,3 +24,4 @@ class Image(models.Model):
      description = models.CharField(max_length=200)
      location = models.ManyToManyField(location)
      category = models.ForeignKey(Editor)
+     Image_image = models.ImageField(upload_to = 'images/',null = True)
