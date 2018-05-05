@@ -14,14 +14,36 @@ class Editor(models.Model):
     class Meta:
         ordering = ['name']
 
-class location(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length = 20)
 
     def __str__(self):
         return self.name
+class Category(models.Model):
+    name = models.CharField(max_length = 20)
+
+    def __str__(self):
+        return self.name
+    @classmethod
+    def search_by_category(cls,search_term):
+        pics = cls.objects.filter(name__icontains=search_term).first()
+        return pics
+
+
+
 class Image(models.Model):
      name = models.CharField(max_length=20)
      description = models.CharField(max_length=200)
-     location = models.ManyToManyField(location)
-     category = models.ForeignKey(Editor)
+     location = models.ForeignKey(Location, null=True)
+     category = models.ManyToManyField(Category,null=True)
      Image_image = models.ImageField(upload_to = 'images/',null = True)
+
+     @classmethod
+     def get_all(cls):
+         pics = cls.objects.all()
+         return pics
+
+     @classmethod
+     def get_Image_by_category(cls,category):
+         images = cls.objects.filter(category=category).all()
+         return images

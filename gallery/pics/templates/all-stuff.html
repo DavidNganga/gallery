@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1></h1>
+
+
+{% for img in img%}
+
+
+    <h1 class="text-center">{{img.name}}</h1>
+
+  <h1 class="text-center"> {{ img.location }} </h1>
+
+      <h1 class="text-center">{{img.description}}</h1>
+
+
+  <img src="{{img.Image_image.url}}" class="img-responsive" alt="Image">
+
+
+
+
+
+
+
+
+
+
+{% endfor%}
+{% endblock %}
