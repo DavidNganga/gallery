@@ -12,22 +12,30 @@
 
   </div>
 
-  <div class="row">
+
 
   {% if images %}
     {% for image in images %}
 
-      <div class="col-sm-6 col-md-4">
 
 <!-- <img  src="{{image.Image_image.url}}" alt="x"> -->
+<div class="row">
+  <div class="column">
+    <a href=" {% url 'all' %}  ">
+     <img src=" {{image.Image_image.url}}  " />
+    </a>
+  </div>
 
-      </div>
-      <a href=" {% url 'all' %}  ">
-       <img src=" {{image.Image_image.url}}  " />
-      </a>
+</div>
+
+
+
+
+
+
 
     {% endfor %}
   {% endif %}
   </div>
-</div>
+
 {% endblock %}
