@@ -6,19 +6,19 @@ By David Ng'ang'a
 
 ## User Stories
 The user is able to:
-** view photos uploaded to the site
-** search for photos by category
-** View the photos and their details
-** copy an image link
+ view photos uploaded to the site
+ search for photos by category
+ View the photos and their details
+ copy an image link
 
 ## Known Bugs
 No known Bugs
 
 ## Technology used
-** Python3.6
-** django
-** bootstrap
-** Postgres Database
-** css
-** html
-** Heroku
+ Python3.6
+ django
+ bootstrap
+ Postgres Database
+ css
+ html
+ Heroku

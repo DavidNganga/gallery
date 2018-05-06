@@ -24,3 +24,7 @@ def search_results(request):
 def all(request):
     img = Image.get_all()
     return render (request, 'all-stuff.html',{"img":img})
+
+def image(request,image_id):
+    image = Image.objects.get(id = image_id)
+    return render(request,"all-stuff.html",{"image":image})

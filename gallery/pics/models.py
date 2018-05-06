@@ -48,4 +48,6 @@ class Image(models.Model):
          images = cls.objects.filter(category=category).all()
          return images
 
-     
+     def get_Image_by_id(cls,id):
+        images = cls.objects.get(id=id)
+        return images
