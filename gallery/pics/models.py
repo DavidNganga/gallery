@@ -47,3 +47,5 @@ class Image(models.Model):
      def get_Image_by_category(cls,category):
          images = cls.objects.filter(category=category).all()
          return images
+
+     
