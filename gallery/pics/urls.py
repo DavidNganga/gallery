@@ -6,7 +6,7 @@ from django.conf import settings
 urlpatterns=[
     url(r'^$',views.visualize,name = 'visualize'),
     url(r'^search/',views.search_results, name='search_results'),
-    url(r'^all/',views.all,name = 'all'),
+    url(r'^all/(\d+)',views.all,name = 'all'),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

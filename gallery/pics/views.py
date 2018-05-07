@@ -9,11 +9,13 @@ def visualize(request):
 
 def search_results(request):
 
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_images = Category.search_by_category(search_term)
-        images = Image.get_Image_by_category(searched_images)
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        print(search_term)
+
+        images = Image.search_results(search_term)
         message = f"{search_term}"
+        print(images)
 
         return render(request, 'search.html',{"message":message,"images": images})
 
@@ -21,10 +23,10 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
-def all(request):
-    img = Image.get_all()
-    return render (request, 'all-stuff.html',{"img":img})
 
-def image(request,image_id):
+
+def all(request,image_id):
+
     image = Image.objects.get(id = image_id)
-    return render(request,"all-stuff.html",{"image":image})
+
+    return render(request,"all-stuff.html",{"image":image, id: image_id})

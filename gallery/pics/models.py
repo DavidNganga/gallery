@@ -24,10 +24,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    @classmethod
-    def search_by_category(cls,search_term):
-        pics = cls.objects.filter(name__icontains=search_term).first()
-        return pics
+
 
 
 
@@ -35,7 +32,7 @@ class Image(models.Model):
      name = models.CharField(max_length=20)
      description = models.CharField(max_length=200)
      location = models.ForeignKey(Location, null=True)
-     category = models.ManyToManyField(Category,null=True)
+     category = models.ForeignKey(Category,null=True)
      Image_image = models.ImageField(upload_to = 'images/',null = True)
 
      @classmethod
@@ -43,11 +40,17 @@ class Image(models.Model):
          pics = cls.objects.all()
          return pics
 
-     @classmethod
-     def get_Image_by_category(cls,category):
-         images = cls.objects.filter(category=category).all()
-         return images
+     # @classmethod
+     # def search_by_category(cls,searched_category):
+     #     images = cls.objects.filter(category__name__icontains= searched_category)
+     #     return images
 
      def get_Image_by_id(cls,id):
         images = cls.objects.get(id=id)
         return images
+
+     @classmethod
+     def search_results(cls,search_term):
+         pics = cls.objects.filter(category__name__icontains=search_term)
+         print(pics)
+         return pics
