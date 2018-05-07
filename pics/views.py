@@ -1,6 +1,7 @@
 from django.http  import HttpResponse
 from django.shortcuts import render
 from .models import Image,Category,Location,Editor
+from django_modalview.generic.base import ModalTemplateView
 
 # Create your views here.
 def visualize(request):

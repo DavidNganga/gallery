@@ -1,9 +1,11 @@
 h1
 {
   color: white;
+  font-family: test@foo, sans-serif;
 }
  h2{
    color: white;
+   font-family: fantasy;
  }
 .row{
   display: flex;
@@ -75,4 +77,7 @@ body{
 .work{
   display: none;
 }
-.
+
+/* body{
+  background-image: url('https://unsplash.com/photos/t1KmiSNaXr8');
+} */

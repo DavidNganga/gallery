@@ -15,9 +15,15 @@
         {% bootstrap_css %}
         <link rel="stylesheet" href="{% static 'css/basepics.css' %}">
       {% endblock %}
+<style>
+  body{
+    background-image: url('https://unsplash.com/photos/t1KmiSNaXr8');
+  }
+</style>
 
 </head>
 <body>
+
     {% include 'navbar.html' %}
     {% block content %}<h1>hhh</h1>  {%endblock%}
 
