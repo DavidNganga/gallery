@@ -1,11 +1,11 @@
 h1
 {
   color: white;
-  font-family: test@foo, sans-serif;
+
 }
  h2{
    color: white;
-   font-family: fantasy;
+   
  }
 .row{
   display: flex;
