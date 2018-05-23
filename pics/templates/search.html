@@ -32,10 +32,13 @@
 
 
 
-<input type="image" class="work" value=" http://127.0.0.1:8000/all/ " id="myInput">
+<!-- <input type="image" class="work" value=" http://127.0.0.1:8000/all/ " id="myInput"> -->
 
 <!-- The button used to copy the image -->
-<button onclick="myFunction()">Copylink</button>
+
+        <button class="btn" data-clipboard-text="{{image.image.image_url}}">
+                Copy image url
+            </button>
 
 
 

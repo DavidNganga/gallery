@@ -26,10 +26,9 @@ class Category(models.Model):
         return self.name
 
 
-
-
 class Image(models.Model):
      name = models.CharField(max_length=20)
+     image_url = models.TextField(blank = True)
      description = models.CharField(max_length=200)
      location = models.ForeignKey(Location, null=True)
      category = models.ForeignKey(Category,null=True)
@@ -40,10 +39,6 @@ class Image(models.Model):
          pics = cls.objects.all()
          return pics
 
-     # @classmethod
-     # def search_by_category(cls,searched_category):
-     #     images = cls.objects.filter(category__name__icontains= searched_category)
-     #     return images
 
      def get_Image_by_id(cls,id):
         images = cls.objects.get(id=id)
