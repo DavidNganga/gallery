@@ -1,11 +1,11 @@
 h1
 {
-  color: white;
+  color: black;
 
 }
  h2{
-   color: white;
-   
+   color: black;
+
  }
 .row{
   display: flex;
@@ -33,10 +33,7 @@ h1
     max-width: 100%;
   }
 }
-body{
-  background-color: black;
-      height: 100%;
-}
+
 .tooltip {
   position: relative;
   display: inline-block;
