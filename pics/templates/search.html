@@ -9,41 +9,20 @@
     {% else %}
       <h2> Found 0 images for the search term {{message}}</h2>
     {% endif %}
-
   </div>
-
-
 
   {% if images  %}
     {% for image in images %}
-
 
 <div class="container">
 <div class="row">
   <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <a href=" {% url 'all' image.id  %}  ">
-     <img src=" {{image.Image_image.url}}  " />
+     <img src=" {{image.Image_image.url}}  " >
     </a>
   </div>
 </div>
 </div>
-
-
-
-
-
-<!-- <input type="image" class="work" value=" http://127.0.0.1:8000/all/ " id="myInput"> -->
-
-<!-- The button used to copy the image -->
-
-        <button class="btn" data-clipboard-text="{{image.image.image_url}}">
-                Copy image url
-            </button>
-
-
-
-
-
 
     {% endfor %}
   {% endif %}

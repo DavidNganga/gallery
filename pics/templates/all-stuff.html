@@ -1,40 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-
-
-
-
 <table>
   <tbody>
     <tr>
-
       <td style="width:25%;"> <h2 class="text-center"> <p>Name</p>   {{image.name}}</h2></td>
       <td style="width:25%;"><h2 class="text-center"> <p>Location</p>{{ image.location }}</h2>
- </td>
+    </td>
  <td style="width:25%;"><h2 class="text-center">  <p>Description</p>   {{image.description}}</h2></td>
  <td><img src="{{image.Image_image.url}}" class="img-responsive" alt="Image"> </td>
     </tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

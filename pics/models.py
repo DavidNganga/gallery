@@ -39,7 +39,6 @@ class Image(models.Model):
          pics = cls.objects.all()
          return pics
 
-
      def get_Image_by_id(cls,id):
         images = cls.objects.get(id=id)
         return images
